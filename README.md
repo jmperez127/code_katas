@@ -1,2 +1,2 @@
-# code_katas
+# Code katas
 Daily code practice
