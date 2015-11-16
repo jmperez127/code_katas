@@ -1,2 +1,2 @@
 # Code katas
-Daily code practice
+Daily code practice based on http://codekata.com/
