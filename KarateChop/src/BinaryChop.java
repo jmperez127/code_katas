@@ -7,46 +7,18 @@ public class BinaryChop {
     public int iterativeChop(int value, int[] array) {
         int bottomIndex = 0;
         int topIndex = (array.length - 1);
-        int midIndex = topIndex / 2;
 
-        if (value > array[topIndex])
-            return -1;
+        while (bottomIndex <= topIndex) {
 
-        if (value < array[bottomIndex])
-            return -1;
-
-        if (array.length == 1)
-            return 0;
-
-        if (value == array[bottomIndex])
-            return bottomIndex;
-
-        if (value == array[topIndex])
-            return topIndex;
-
-        if (value == array[midIndex])
-            return midIndex;
-
-        if (value < array[midIndex]) {
-            while (bottomIndex < topIndex) {
-
-                if (value == array[bottomIndex])
-                    return bottomIndex;
-
-                bottomIndex++;
-                topIndex = midIndex;
-                midIndex = ((topIndex / 2) + bottomIndex);
-            }
-        } else if (value > array[midIndex]) {
-            while (bottomIndex < topIndex) {
-                if (value == array[midIndex])
-                    return midIndex;
-
-                bottomIndex = midIndex;
-                midIndex = ((topIndex - bottomIndex) / 2) + midIndex;
-                bottomIndex++;
-            }
+            int midIndex = (bottomIndex + topIndex) / 2;
+            if (value > array[midIndex])
+                bottomIndex = midIndex + 1;
+            else if (value < array[midIndex])
+                topIndex = midIndex - 1;
+            else
+                return midIndex;
         }
+
         return -1;
     }
 }
