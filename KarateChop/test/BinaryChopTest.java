@@ -51,16 +51,16 @@ public class BinaryChopTest {
     }
 
     @Test
-    public void returnMinusOneIfItemIsNotFoundInArray(){
+    public void returnMinusOneIfItemIsNotFoundInArray() {
         assertEquals(-1, binaryChop.iterativeChop(6, new int[]{1, 3, 5, 7}));
     }
 
     @Test
     public void finalTests() {
-        assertEquals(0,  binaryChop.iterativeChop(1, new int[]{1, 3, 5, 7}));
-        assertEquals(1,  binaryChop.iterativeChop(3, new int[]{1, 3, 5, 7}));
-        assertEquals(2,  binaryChop.iterativeChop(5, new int[]{1, 3, 5, 7}));
-        assertEquals(3,  binaryChop.iterativeChop(7, new int[]{1, 3, 5, 7}));
+        assertEquals(0, binaryChop.iterativeChop(1, new int[]{1, 3, 5, 7}));
+        assertEquals(1, binaryChop.iterativeChop(3, new int[]{1, 3, 5, 7}));
+        assertEquals(2, binaryChop.iterativeChop(5, new int[]{1, 3, 5, 7}));
+        assertEquals(3, binaryChop.iterativeChop(7, new int[]{1, 3, 5, 7}));
         assertEquals(-1, binaryChop.iterativeChop(0, new int[]{1, 3, 5, 7}));
         assertEquals(-1, binaryChop.iterativeChop(2, new int[]{1, 3, 5, 7}));
         assertEquals(-1, binaryChop.iterativeChop(4, new int[]{1, 3, 5, 7}));
