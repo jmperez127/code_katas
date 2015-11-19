@@ -8,7 +8,7 @@
 // This Kata is straightforward. Implement a binary search routine (using the specification below) in the
 // language and technique of your choice. Tomorrow, implement it again, using a totally different technique.
 // Do the same the next day, until you have five totally unique implementations of a
-// binary chop. (For example, one solution might be the traditional iterative approach, one might be
+// binary iterativeChop. (For example, one solution might be the traditional iterative approach, one might be
 // recursive, one might use a functional style passing array slices around, and so on).
 
 
