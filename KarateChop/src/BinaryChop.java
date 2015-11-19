@@ -1,4 +1,4 @@
-// More info here http://codekata.com/kata/kata02-karate-chop/
+// More info and complete requirements here http://codekata.com/kata/kata02-karate-chop/
 
 public class BinaryChop {
     public int iterativeChop(int value, int[] array) {
