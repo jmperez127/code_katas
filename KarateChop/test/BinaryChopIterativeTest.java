@@ -27,8 +27,6 @@ public class BinaryChopIterativeTest {
     public void returnZeroWhenValueIsFoundOnTheFirstArrayElement() {
         assertEquals(0, binaryChop.iterativeChop(1, new int[]{1}), 0);
         assertEquals(0, binaryChop.iterativeChop(1, new int[]{1, 3, 5}), 0);
-
-
     }
 
     @Test
