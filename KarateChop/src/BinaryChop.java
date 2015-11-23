@@ -1,40 +1,38 @@
-import java.util.ArrayList;
-import java.util.List;
+// More info and complete requirements here http://codekata.com/kata/kata02-karate-chop/
 
 public class BinaryChop {
-    protected List<Integer> items;
-    private int iterationCount;
+    public int iterativeChop(int value, int[] array) {
+        int bottomIndex = 0;
+        int topIndex = (array.length - 1);
 
-    public BinaryChop() {
-        iterationCount = 0;
-        items = new ArrayList<Integer>();
-    }
-
-    public List<Integer> getItems() {
-        return items;
-    }
-
-    public void addValue(int value) {
-        items.add(value);
-    }
-
-    public int findPositionByValue(int value) {
-        if (items.get(0) == value) {
-            iterationCount++;
-            return 0;
+        while (bottomIndex <= topIndex) {
+            int midIndex = (bottomIndex + topIndex) / 2;
+            if (value > array[midIndex])
+                bottomIndex = midIndex + 1;
+            else if (value < array[midIndex])
+                topIndex = midIndex - 1;
+            else
+                return midIndex;
         }
-
-        int middle = (items.size() - 1) / 2;
-
-        if (items.get(middle) == value) {
-            iterationCount++;
-            return middle;
-        }
-
         return -1;
     }
 
-    public int getIterationCount() {
-        return iterationCount;
+    public int recursiveChop(int value, int[] array) {
+        int bottomIndex = 0;
+        int topIndex = (array.length - 1);
+        return doRecursiveChop(value, array, topIndex, bottomIndex);
+    }
+
+    private int doRecursiveChop(int value, int[] array, int topIndex, int bottomIndex) {
+        int midIndex = (bottomIndex + topIndex) / 2;
+
+        if (bottomIndex > topIndex)
+            return -1;
+        if (value > array[midIndex])
+            return doRecursiveChop(value, array, topIndex, midIndex + 1);
+        if (value < array[midIndex])
+            return doRecursiveChop(value, array, midIndex - 1, bottomIndex);
+
+        return midIndex;
     }
 }
