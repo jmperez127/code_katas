@@ -9,4 +9,10 @@ public class WeatherTest {
     public void setUp() {
         weather = new Weather();
     }
+
+    @Test
+    public void testWeatherData() {
+        assertEquals(80, weather.getSmallestTemperatureDay());
+    }
+
 }
